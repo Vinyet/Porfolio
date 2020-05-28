@@ -1,0 +1,137 @@
+
+@import '../../variables.scss';
+
+.sidebar {
+    background-color: $accentColor;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    max-width: 400px;
+    padding: 20px;
+    h2 {
+        text-align: center;
+    }
+    img {
+        margin-left: 140px;
+        width: 100px;
+    }
+    #sidebar-text {
+        text-align: center;
+        font-weight: 400;
+        padding: 10px;
+    }
+    .sidebar-top-link {
+        display: flex;
+        justify-content: center;
+        img {
+            width: 30px;
+            padding: 5px;
+            margin-left: 15px;
+        }
+    }
+    .sidebar-navigation {
+        margin-top: 10px;
+        max-width: 500px;
+        margin: 2em auto;
+        &:hover a {
+            opacity: .4;
+        }
+        a {
+            padding-left: 10px;
+            position: relative;
+            display: block;
+            max-width: 500px;
+            padding: 20px 20px 20px 45px;
+            box-sizing: border-box;
+            color: #777;
+            background: #fAfAfA;
+            text-decoration: none;
+        }
+        a, a:before {
+            transition: all .4s;
+        }
+        a:before {
+            content: "";
+            position: absolute;
+            left:0; bottom:0; top:0;
+            width: 20px;
+            background: #7F8C9A;
+        }
+        a + a {
+            border-top: 2px solid #ededed;
+        }
+        a:hover, a:focus {
+            opacity: 1;
+            padding-left: 55px;
+        }
+        a:focus:before, a:hover:before {
+            width: 30px;
+        }
+    }
+    .contact-button {
+        padding: 15px;
+        border: 1px solid #000;
+        font-size: 16px;
+        letter-spacing: 5px;
+        width: 200px;
+        margin-left: 100px;
+        cursor: pointer;
+        &:hover {
+            letter-spacing: 6px;
+            transition-duration: 0.3s;
+        }
+    }
+}
+
+.modal {
+    a {
+        padding: 15px;
+        cursor: pointer;
+    }
+    .contact-header {
+        padding: 20px;
+        font-size: 24px;
+        font-weight: 600;
+        width: 15%;
+        margin: auto;
+        letter-spacing: 5px;
+    }
+    form {
+        padding: 30px;
+        width: 35%;
+        margin: auto;
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        input[type="text"] {
+            outline: none;
+            padding: 15px;
+            border: 1px solid #fff;
+            border-bottom: 1px solid lightgray;
+            width: 400px;
+            margin-bottom: 20px;
+            border-radius: 1px;
+        }
+        textarea {
+            outline: none;
+            border: 1px solid #fff;
+            border-bottom: 1px solid lightgray;
+            padding: 20px;
+            border: 1px solid lightgray;
+            width: 400px;
+            height: 100px;
+            border-radius: 1px;
+            resize: none;
+        }
+    }
+    .send-button, .cancel-button {
+        padding: 10px;
+        width: 130px;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #fff;
+        border-radius: 1px;
+        cursor: pointer;
+    }
+}
