@@ -3,7 +3,7 @@ import React from 'react';
 
 const NotFound = () => {
     return (
-        <div>404. Not found</div>
+        <h2 style={{marginLeft: '600px'}}>404. Not found</h2>
     )
 }
 

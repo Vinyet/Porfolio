@@ -1,12 +1,81 @@
 import React from 'react';
 import {useSpring, animated} from 'react-spring';
+import styled from 'styled-components';
+import {accentColor} from '../variables';
+
+
+const MainStyles = styled.div`
+.main {
+    margin-left: 550px;
+    margin-bottom: 150px;
+    max-width: 90em;
+    h3 {
+        background-color: ${accentColor};
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+    .skills-box {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        .skills-box-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            padding: 10px;
+            .skill {
+                display: flex;
+                flex-direction: column;
+                img {
+                    margin: auto;
+                    width: 100px;
+                    height: 100px;
+                }
+                p {
+                    text-align: center;
+                    font-size: 18px;
+                    line-height: 27px;
+                    max-width: 250px;
+                }
+            #firebase img {
+                height: 90px;
+                width: 70px;
+            }
+            #sass img {
+                height: 80px;
+                width: 140px;
+            }
+        }
+    }
+    .learning-box-row {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 30px;
+        img {
+            margin: auto;
+            width: 100px;
+            height: 100px;
+        }
+        #redux img {
+            height: 100px;
+            width: 120px;
+        }
+        #cypress img {
+            height: 50px;
+            width: 140px;
+            margin-top: 25px;
+        }
+    }
+}
+`;
 
 
 const Main = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}})
 
     return (
-        <>
+            <MainStyles>
             <animated.div style={props} className='main'>
                 <h3>¿QUÉ PUEDO HACER?</h3>
                 <div className="skills-box">
@@ -42,13 +111,19 @@ const Main = () => {
                 <h3>¿QUÉ ESTOY APRENDIENDO?</h3>
                 <div className="skills-box">
                     <div className="learning-box-row">
-                        <div className="skill" id="typescript">TYPESCRIPT</div>
-                        <div className="skill" id="redux">REDUX</div>
-                        <div className="skill" id="python">STYLED COMPONENTS</div>
+                        <div className="skill">
+                            <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="typescript"></img>
+                        </div>
+                        <div className="skill" id="redux">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png" alt="redux"></img>
+                        </div>
+                        <div className="skill" id="cypress">
+                            <img src="https://dka575ofm4ao0.cloudfront.net/pages-transactional_logos/retina/77608/cypress-bw.png" alt="cypress"></img>
+                        </div>
                     </div>
                 </div>
             </animated.div>
-        </>
+            </MainStyles>
     )
 }
 

@@ -1,25 +1,15 @@
- 
-/*import React, { useState } from 'react';
-//import BeerList from '../components/BeerList';
-import ThemeContext from '../contexts/ThemeContext';
+import React from 'react';
 
-const Home = () => {
-  const [theme, setTheme] = useState('light');
+
+const Theme = React.createContext(
   
-  return (
-    <div id="home">
-      <div>
-        <span>Theme:</span> 
-        <button onClick={() => setTheme('dark')}>Dark</button> 
-        <button onClick={() => setTheme('light')}>Light</button> 
-        <button onClick={() => setTheme('warm')}>Warm</button> 
-      </div>
-      <ThemeContext.Provider value={{theme, setTheme}}>    
-        <BeerList />
-      </ThemeContext.Provider>
-    </div>
-  );
-}
+);
 
-export default Home;
-*/
+export default Theme;
+
+// from 37:00 https://www.youtube.com/watch?v=2qgs7buSnHQ
+// https://www.youtube.com/watch?v=UWFU0xV5Y2I
+// https://www.youtube.com/watch?v=MMivyJS49jU
+// https://www.youtube.com/watch?v=FjDo1mbkNtw
+// https://www.youtube.com/watch?v=Vh6ldPGm3Z4
+ 

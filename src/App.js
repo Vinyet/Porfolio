@@ -4,13 +4,15 @@ BrowserRouter as Router,
 Switch,
 Route,
 } from "react-router-dom";
-import Sidebar from './components/Sidebar/Sidebar';
+import Theme from './customHooks/Theme';
+import Sidebar from './components/Sidebar';
 import Header from './components/Header';
-import Main from './components/Main/Main';
+import Main from './components/Main';
 import Footer from './components/Footer';
-import Porfolio from './components/Porfolio/Porfolio';
-import SobreMi from './components/SobreMi/SobreMi';
-import Curriculum from './components/Curriculum/Curriculum';
+import Porfolio from './components/Porfolio';
+import SobreMi from './components/SobreMi';
+import Curriculum from './components/Curriculum';
+import LanguageBar from './components/LanguageBar';
 import NotFound from './components/NotFound';
 import './index.scss';
 
@@ -19,8 +21,10 @@ function App() {
   return (
     <div>
      <Router>
+      <Theme.Provider value={{Theme}}>
+      <LanguageBar/>
       <Header/>
-       <Sidebar/>
+      <Sidebar/>
         <Switch>
           <Route exact path="/" component={Main}/>
           <Route path="/porfolio" component={Porfolio}/>
@@ -28,11 +32,13 @@ function App() {
           <Route path="/cv" component={Curriculum}/>
           <Route path="/" component={NotFound}/>
           </Switch>
-        <Footer/>
+        <Footer>&copy; Vinyet Escribano, 2020</Footer>
+        </Theme.Provider>
      </Router>
     </div>
   );
 }
+
 
 
 
