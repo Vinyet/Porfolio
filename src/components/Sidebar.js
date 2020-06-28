@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { accentColor } from '../variables';
+import { accentColor, linkColor } from '../variables';
 import Popup from "reactjs-popup";
  
 
@@ -88,54 +88,85 @@ const SidebarStyle = styled.div`
 }
 `;
 const ModalStyle = styled.div`
-  a {
-    padding: 15px;
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 7px;
+    font-size: 22px;
     cursor: pointer;
   }
   .contact-header {
+    margin-top: 20px;
+    color: #000;
     padding: 20px;
     font-size: 24px;
-    font-weight: 600;
-    width: 15%;
-    margin: auto;
+    text-align: center;
     letter-spacing: 5px;
   }
   form {
+    font-family: 'Robot', sans-serif;
+    margin-top: 10px;
     padding: 30px;
-    width: 35%;
-    margin: auto;
     font-size: 16px;
     display: flex;
-    flex-direction: column;
-    input[type="text"] {
+    justify-content: space-between;
+    #form-left {
+      display: flex;
+      flex-direction: column;
+      input[type="text"] {
         outline: none;
-        padding: 15px;
+        padding: 15px 5px;
         border: 1px solid #fff;
         border-bottom: 1px solid lightgray;
         width: 400px;
         margin-bottom: 20px;
-        border-radius: 1px;
+        &:focus {
+          border-bottom: 1px solid ${linkColor}; 
+          transition-duration: 0.5s;
+        }
+      }
     }
-    textarea {
+    #form-right {
+      textarea {
         outline: none;
-        border: 1px solid #fff;
-        border-bottom: 1px solid lightgray;
-        padding: 20px;
         border: 1px solid lightgray;
+        padding: 10px;
         width: 400px;
-        height: 100px;
-        border-radius: 1px;
+        height: 160px;
         resize: none;
+        overflow: auto;
+        &:focus {
+          border: 1px solid ${linkColor}; 
+          transition-duration: 0.5s;
+        }
+      }
     }
   }
-  .send-button, .cancel-button {
-    padding: 10px;
-    width: 130px;
-    margin-left: 20px;
+  .actions {
     margin-bottom: 20px;
-    border: 1px solid #fff;
-    border-radius: 1px;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    span {
+      color: #000;
+      padding: 10px;
+    }
+    .send-button {
+      width: 120px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #fff;
+      border-radius: 1px;
+      cursor: pointer;
+      outline: none;
+      &:hover {
+        background-color: ${linkColor};
+        letter-spacing: 3px;
+        transition-duration: 0.5s;
+        &:focus {
+          background-color: ${linkColor};
+        }
+      }
+    }
   }
 `;
 
@@ -148,7 +179,6 @@ const Sidebar = ({ props }) => {
     // consumer if true? 
   }
 
-
   const contactPopUp = () => (
     <ModalStyle>
       <Popup trigger={<button className="contact-button">CONTACTO</button>} modal>
@@ -160,38 +190,34 @@ const Sidebar = ({ props }) => {
             <div className="contact-header">CONTACTO</div>
             <div className="content">
               {" "}
-              <form action="POST">
-                  <input type="text" placeholder="Nombre" required />
-                  <input type="text" placeholder="Empresa" required />
-                  <textarea placeholder="Mensaje"></textarea>
+              <form action="mailto:vinyetescribano@protonmail.com" method="post" enctype="text/plain">
+                  <div id='form-left'>
+                    <input type="text" placeholder="Nombre" required />
+                    <input type="text" placeholder="Empresa (opcional)" />
+                    <input type="text" placeholder="Asunto" required />
+                  </div>
+                  <div id='form-right'>
+                    <textarea placeholder="Mensaje"></textarea>
+                  </div>
               </form>
             </div>
             <div className="actions">
+            <input type="submit" className="send-button" value="ENVIAR"></input>
               <Popup
-                trigger={<button className="send-button" style={{marginLeft: '410px'}}>ENVIAR</button>}
+                trigger={<input type="submit" className="send-button" value="ENVIAR"></input>}
                 position="top center"
                 closeOnDocumentClick
               >
                 <span>
-                  ¡Gracias!
+                  ¡Gracias! :-)
                 </span>
               </Popup>
-              <button
-                className="cancel-button"
-                onClick={() => {
-                  console.log("modal closed ");
-                  close();
-                }}
-              >
-                Cancelar
-              </button>
             </div>
           </div>
         )}
       </Popup>
     </ModalStyle>
   );
-
 
     return (
       <SidebarStyle>
