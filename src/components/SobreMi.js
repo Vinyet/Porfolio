@@ -7,12 +7,12 @@ import { accentColor } from '../variables';
 const SobreMiStyles = styled.div`
     .sobre-mi-container {
         margin-left: 550px;
+        margin-bottom: 150px;
         max-width: 90em;
-        height: 500px;
         h3 {
             background-color: ${accentColor};
-            text-align: center;
             color: #fff;
+            text-align: center;
             padding: 20px;
         }
         .traits {

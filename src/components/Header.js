@@ -4,7 +4,7 @@ import { accentColor } from '../variables';
 
 
 const HeaderStyle = styled.div`
-    margin-left: 550px;
+    margin-left: 500px;
     display: flex;
     justify-content: space-around;
     width: 90em;
@@ -14,9 +14,7 @@ const HeaderStyle = styled.div`
         letter-spacing: 1px;
         p {
             line-height: 30px;
-            span {
-                font-weight: 800;
-            }
+            span { font-weight: 800; }
         }
         h2 {
             font-weight: bold;
@@ -32,14 +30,11 @@ const HeaderStyle = styled.div`
         }
     }
     img {
-        border-radius: 360px;
+        border-radius: 100px;
         margin: 50px auto;
-        width: 250px;
-        opacity: 0.7;
-        :hover {
-            opacity: 1;
-            transition-duration: 0.5s;
-        }
+        width: 180px;
+        height: 220px;
+        filter: saturate(150%);
     }
 
 `;
@@ -54,7 +49,7 @@ const Header = () => {
                 <p>Desarrolladora web <span>front-end</span> junior. Especializada en <span>SEO</span>, <span>UI</span>, <span>UX</span> y <span>accesibilidad web</span>. Sueño con un <span>Internet descentralizado &#10084;</span></p>
             </div>
             <div className="photo">
-                <img src='myAvatar.png' alt='vinyet escribano'></img>
+                <img src='myAvatar2.jpeg' alt='vinyet escribano'></img>
             </div>
         </HeaderStyle>
     )

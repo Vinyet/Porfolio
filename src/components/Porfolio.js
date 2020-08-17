@@ -67,6 +67,11 @@ const Porfolio = () => {
                     <p>¡Este <strong>porfolio web</strong>!</p>
                     <p><span>React.js</span> | <span>Styled Components</span> | <span>Firebase</span></p>
                 </div>
+                <div className="proyecto" id="prioritizer">
+                    <img src="" alt="prioritizer-logo"></img>
+                    <p><strong>Prioritizer</strong> es un bot que determina cuál de tus tareas es la prioritaria en función de los criterios del usuario.</p>
+                    <p><span>React.js</span> | <span>Styled Components</span> | <span>Firebase</span></p>
+                </div>
             </animated.div>
         </PorfolioStyles>
     )

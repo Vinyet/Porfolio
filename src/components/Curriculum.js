@@ -67,7 +67,7 @@ const Curriculum = () => {
 
     return (
         <CurriculumStyle>
-        <animated.div style={props} className="cv-container">
+            <animated.div style={props} className="cv-container">
                 <section className="cv-work-experience">
                     <h3>EXPERIENCIA PROFESIONAL</h3>
                     <div className="job-titles">
