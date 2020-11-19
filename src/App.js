@@ -37,7 +37,7 @@ function App() {
             <>
             <GlobalStyles />
             <LanguageBar/>
-            <button className="toggle-btn" onClick={toggleTheme}><img src="https://image.flaticon.com/icons/svg/107/107753.svg"></img></button>
+            <button className="toggle-btn" onClick={toggleTheme}><img src="https://image.flaticon.com/icons/svg/107/107753.svg" alt='toggle button'></img></button>
             <Header/>
             <Sidebar/>
               <Switch>
@@ -46,7 +46,7 @@ function App() {
                 <Route path="/sobre-mi" component={SobreMi}/>
                 <Route path="/cv" component={Curriculum}/>
                 <Route path="/" component={NotFound}/>
-                </Switch>
+              </Switch>
             <Footer>&copy; Vinyet Escribano, 2020</Footer>
             </>
         </ThemeProvider>

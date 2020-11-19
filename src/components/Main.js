@@ -6,12 +6,13 @@ import {accentColor} from '../variables';
 
 const MainStyles = styled.div`
 .main {
-    margin-left: 550px;
+    margin-left: 500px;
     margin-bottom: 150px;
     max-width: 90em;
     h3 {
         background-color: ${accentColor};
         color: #fff;
+        font-weight: 600;
         text-align: center;
         padding: 20px;
     }

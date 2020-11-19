@@ -6,35 +6,38 @@ import { accentColor } from '../variables';
 const HeaderStyle = styled.div`
     margin-left: 500px;
     display: flex;
-    justify-content: space-around;
-    width: 90em;
+    justify-content: space-between;
+    max-width: 90em;
     .description {
-        padding: 20px;
-        width: 800px;
-        letter-spacing: 1px;
-        p {
-            line-height: 30px;
-            span { font-weight: 800; }
-        }
+        padding: 10px;
         h2 {
-            font-weight: bold;
             letter-spacing: 3px;
-            margin-bottom: -30px;
-            font-size: 40px;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 0px;
         }
         h4 {
-            padding-left: 80px;
-            letter-spacing: 4px;
+            display: inline;
+            font-weight: 400;
+            letter-spacing: 3px;
             color: ${accentColor};
-            margin-bottom: 50px;
+        }
+        p {
+            margin-top: 40px;
+            line-height: 30px;
+            letter-spacing: 1px;
+            span { font-weight: 800; }
         }
     }
-    img {
-        border-radius: 100px;
-        margin: 50px auto;
-        width: 180px;
-        height: 220px;
-        filter: saturate(150%);
+    .photo {
+        width: 200px;
+        img {
+            margin-top: 100px;
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            filter: saturate(150%);
+        }
     }
 
 `;
@@ -45,11 +48,11 @@ const Header = () => {
         <HeaderStyle>
             <div className="description">
                 <h2>Vinyet Escribano</h2>
-                <h4>Front-End Developer</h4>
-                <p>Desarrolladora web <span>front-end</span> junior. Especializada en <span>SEO</span>, <span>UI</span>, <span>UX</span> y <span>accesibilidad web</span>. Sueño con un <span>Internet descentralizado &#10084;</span></p>
+                <h4>FRONT-END DEVELOPER</h4>
+                <p>· Desarrolladora web <span>front-end</span> junior<br/> · Especializada en <span>marketing</span>, <span>UI</span>, <span>UX</span> y <span>accesibilidad web</span><br/>· Sueño con un <span>Internet descentralizado &#10084;</span></p>
             </div>
             <div className="photo">
-                <img src='myAvatar2.jpeg' alt='vinyet escribano'></img>
+                <img src='' alt='vinyet escribano'></img>
             </div>
         </HeaderStyle>
     )

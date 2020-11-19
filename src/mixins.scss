@@ -11,5 +11,11 @@ body  {
         color: #73C6B6;
         text-decoration: none;
     }
+    ul {
+        list-style-type: none;
+        li {
+            margin-bottom: 20px;
+        }
+    }
 }
 

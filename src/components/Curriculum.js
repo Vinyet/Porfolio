@@ -8,7 +8,6 @@ const CurriculumStyle = styled.div`
     .cv-container {
         margin: 0px 80px 60px 480px;
         height: fit-content;
-        p { font-size: 20px; }
         h3 {
             flex: 1;
             background-color: ${backgroundColor};
@@ -71,11 +70,11 @@ const Curriculum = () => {
                 <section className="cv-work-experience">
                     <h3>EXPERIENCIA PROFESIONAL</h3>
                     <div className="job-titles">
-                        <h4 className="job-title">Programadora aplicación front-end</h4>
-                        <small><em>Skylab Coders</em> | Marzo 2020 - Actual</small>
-                        <p>Desarrollo y diseño de Bizzlock, una aplicación web front-end hecha con React.js y Firebase para valorar la experiencia laboral de los usuarios de forma anónima.</p>
+                        <h4 className="job-title">Redactora de contenidos académicos</h4>
+                        <small><em>IAM Tech</em> | Septiembre 2020 - Actual</small>
+                        <p>Planificación, diseño y redacción de materiales académicos en materias de programación web y blockchain.</p>
                         <h4 className="job-title">Jefa de Redacción</h4>
-                        <small><em>IM Digital Business School</em> | Septiembre 2017 - Actual</small>
+                        <small><em>IM Digital Business School</em> | Septiembre 2017 - Julio 2020</small>
                         <p>Coordinadora del Departamento de Redacción Académica. Redacción, actualización y edición de contenidos de marketing digital y negocios. Gestión de equipo.</p>           
                         <h4 className="job-title">Fundadora</h4>
                         <small><em>The Daily Fandom</em> | January 2014 - September 2017</small>
