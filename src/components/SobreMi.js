@@ -19,16 +19,8 @@ const SobreMiStyles = styled.div`
         margin-top: 50px;
         margin-bottom: 100px;
         border-top: 1px solid lightgray;
-        span {
-            width: 100%;
-            background-color: lightgray;
-            color: gray;
-            font-size: 20px;
-        }
-        p {
-            font-size: 18px;
-            line-height: 25px;
-        }
+        font-size: 1.1em;
+        line-height: 28px;
     }
     .split-container {
         display: flex;
@@ -133,25 +125,24 @@ const SobreMi = () => {
                     </div>
                     <div className="trait-explanation">
                         {(fortalezas) ? <animated.div class='trait-display' style={props}>
-                            <p>Soy muy ambiciosa y siempre voy más allá en todos mis trabajos, anticipándome a posibles oportunidades y retos. Tabajo bien (incluso mejor) bajo presión y me motivan los retos. Soy muy organizada y se me da bien liderar equipos.</p>
+                            <p>Soy muy ambiciosa y siempre voy más allá en todos mis trabajos, anticipándome a posibles oportunidades y retos. Trabajo bien bajo presión y me motivan los retos. Soy muy organizada y se me da bien liderar equipos.</p>
                             <img src='fortalezas.svg' alt='fortalezas-icon'/>
                         </animated.div> : null}
                         {(debilidades) ? <animated.div class='trait-display' style={props}>
-                            <p>Para no faltar al cliché del programador, soy individualista, autodidacta y me llevo mejor con las máquinas que con las personas.</p>
+                            <p>Para no faltar al cliché del programador, soy individualista, autodidacta y me llevo mejor con las máquinas que con las personas. No me gustan los teléfonos.</p>
                             <img src='debilidades.svg' alt='debilidades-icon'/>
                         </animated.div> : null}
                         {(intereses) ? <animated.div class='trait-display' style={props}>
-                            <ul><li>Accesibilidad web</li><li>Blockchain</li><li>El reto que plantea la inteligencia artificial</li><li>Astronomía</li></ul>
+                            <p>El blockchain, las finanzas descentralizadas, el dilema que plantea la inteligencia artificial, la filosofía y la astronomía.</p>
                             <img src='intereses.svg' alt='intereses-icon'/>
                         </animated.div> : null}
                         {(noInteresa) ? <animated.div class='trait-display' style={props}>
-                            <ul><li>Móviles</li></ul>
+                            <p>Los móviles (en serio, 👎). Tampoco me gusta cuando la burocracia y los protocolos se imponen a la lógica y a lo que dicta el sentido común en un momento determinado.</p>
                             <img src='nointeresa.svg' alt='nointeresa-icon'/>
                         </animated.div> : null}
                     </div> 
                 </div>
                 <div className="about-me-text">
-                    <span>PLANIFICADORA - LÓGICA - ESTRATEGA - AUTODIDACTA - TENAZ</span>
                     <p>Si tuviera que definir mi perfil con una sola palabra, esta sería <strong>HÍBRIDO</strong>.</p>
                     <p>Me gradué en <strong>Periodismo</strong> en el año 2015 con el objetivo de dedicarme a la <strong>divulgación científica</strong>, pues siempre me ha apasionado la ciencia y la tecnología, y creo en el poder de la palabra para aportar mi granito de arena el mundo.
                     La vida me llevó a complimentar mis habilidades comunicativas con estudios en <strong>publicidad</strong>, <strong>marketing</strong>, <strong>fotografía</strong> y <strong>comunicación audiovisual</strong>. Hará cosa de tres años añadí la <strong>programación web</strong> a mi colección.</p>

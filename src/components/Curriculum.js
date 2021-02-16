@@ -1,53 +1,52 @@
 import React from 'react';
 import {useSpring, animated} from 'react-spring';
 import styled from 'styled-components';
-import { backgroundColor, accentColor } from '../variables';
+import { accentColor } from '../variables';
 
 
 const CurriculumStyle = styled.div`
     .cv-container {
-        margin: 0px 80px 60px 480px;
+        border: 1px solid gray;
+        border-radius: 15px;
+        margin: 0px 50px 100px 480px;
+        max-width: 72%;
         height: fit-content;
         h3 {
-            flex: 1;
-            background-color: ${backgroundColor};
             letter-spacing: 10px;
-            padding-top: 20px;
-            padding-left: 30px;
-            min-width: 300px;
+            padding-top: 10px;
+            padding-left: 10px;
+            min-width: 300px; /* responsive */
             max-width: 300px;
+            text-align: left;
         }
-        .cv-work-experience, .cv-education, .key-skills {
+        .cv-work-experience, .cv-education, .cv-key-skills, .cv-languages {
             display: flex;
             justify-content: space-around;
-            margin-bottom: 50px;
+            padding: 30px;
             .job-titles {
                 flex: 4;
-                border-right: 5px solid ${backgroundColor};
-                padding: 0px 30px;
                 .job-title {
                     margin-bottom: 0px;
                 }
             }
             .education-boxes {
-                padding: 0px 30px;
                 flex: 4;
-                border-right: 5px solid ${backgroundColor};
                 h4 {
                     margin-bottom: 0px;
                 }
             }
             .key-skills-list {
-                padding-left: 30px;
                 flex: 4;
-                border-right: 5px solid ${backgroundColor};
                 .key-skills {
                     display: flex;
                     justify-content: flex-start;
+                    border-bottom: none;
+                    padding: 0;
+                    margin: 0;
                     li {
                         list-style-type: none;
                         width: 33%;              
-                        font-size: 20px;
+                        font-sze: 18px;
                         ::before {
                             content: "✔"; 
                             padding-right: 12px;
@@ -56,6 +55,9 @@ const CurriculumStyle = styled.div`
                     }
                     }
             }
+            }
+            .language-container {
+                flex: 4; /* make it pretty */
             }
         }
     }
@@ -70,10 +72,10 @@ const Curriculum = () => {
                 <section className="cv-work-experience">
                     <h3>EXPERIENCIA PROFESIONAL</h3>
                     <div className="job-titles">
-                        <h4 className="job-title">Redactora de contenidos académicos</h4>
-                        <small><em>IAM Tech</em> | Septiembre 2020 - Actual</small>
-                        <p>Planificación, diseño y redacción de materiales académicos en materias de programación web y blockchain.</p>
-                        <h4 className="job-title">Jefa de Redacción</h4>
+                        <h4 className="job-title">CEO</h4>
+                        <small><em>Clover</em> | Septiembre 2020 - Actual</small>
+                        <p>Redacción de contenidos académicos, marketing, publicidad digital, branding, mentoría.</p>
+                        <h4 className="job-title">Directora de Contenidos Académicos</h4>
                         <small><em>IM Digital Business School</em> | Septiembre 2017 - Julio 2020</small>
                         <p>Coordinadora del Departamento de Redacción Académica. Redacción, actualización y edición de contenidos de marketing digital y negocios. Gestión de equipo.</p>           
                         <h4 className="job-title">Fundadora</h4>
@@ -96,7 +98,7 @@ const Curriculum = () => {
                         </div>
                     </div>    
                 </section>
-                <section className="key-skills">
+                <section className="cv-key-skills">
                     <h3>OTRAS HABILIDADES</h3>
                     <div className="key-skills-list">
                         <ul className="key-skills">
@@ -113,6 +115,17 @@ const Curriculum = () => {
                             <li>Metodologías Agile</li>
                             <li>Montaje de ordenadores</li>
                             <li>Adobe Premiere</li>
+                        </ul>
+                    </div>
+                </section>
+                <section className="cv-languages">
+                    <h3>IDIOMAS</h3>
+                    <div className="language-container">
+                        <ul>
+                            <li>Español: Nativo</li>
+                            <li>Catalán: Nativo</li>
+                            <li>Inglés: Muy alto (A1)</li>
+                            <li>Alemán: Básico</li>
                         </ul>
                     </div>
                 </section>

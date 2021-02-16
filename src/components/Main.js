@@ -71,10 +71,8 @@ const MainStyles = styled.div`
 }
 `;
 
-
 const Main = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}})
-
     return (
             <MainStyles>
             <animated.div style={props} className='main'>

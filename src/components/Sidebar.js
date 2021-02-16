@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import { accentColor, linkColor } from '../variables';
 import Popup from "reactjs-popup";
 
-
+/* 
+* Move modalStyle to separate file
+* Fix SMTP contact issue
+*/
 
 const SidebarStyle = styled.div`
   top: 0;
@@ -23,9 +26,10 @@ const SidebarStyle = styled.div`
   }
   #sidebar-text {
     text-align: center;
-    padding: 5px;
-    line-height: 30px;
+    padding: 10px;
+    line-height: 25px;
     margin-top: 30px;
+    font-size: 1.1em;
   }
   .sidebar-top-link {
     display: flex;
@@ -51,7 +55,7 @@ const SidebarStyle = styled.div`
       display: block;
       max-width: 500px;
       padding: 20px 20px 20px 45px;
-      color: #777;
+      color: #000;
       background-color: #fAfAfA;
     }
     a, a:before {
@@ -62,7 +66,7 @@ const SidebarStyle = styled.div`
       position: absolute;
       left:0; bottom:0; top:0;
       width: 20px;
-      background-color: #7F8C9A;
+      background-color: #2A7784;
     }
     a:hover, a:focus {
       opacity: 1;
@@ -74,20 +78,23 @@ const SidebarStyle = styled.div`
   }
   .contact-button {
     padding: 15px;
-    font-size: 16px;
-    letter-spacing: 5px;
-    width: 200px;
-    margin-top: 50px;
-    margin-left: 100px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    width: 340px;
+    margin-top: 40px;
+    margin-left: 20px;
     cursor: pointer;
     background-color: #fff;
     border: 1px solid #fff;
+    border-radius: 20px;
     &:hover {
       letter-spacing: 6px;
-      transition-duration: 0.3s;
+      box-shadow: -1px 5px 5px 0px rgba(0,0,0,0.40);
+      transition-duration: 0.5s;
     }
 }
 `;
+
 const ModalStyle = styled.div`
   .close {
     position: absolute;
@@ -175,7 +182,6 @@ const ModalStyle = styled.div`
 `;
 
 const Sidebar = () => {
-
   const contactPopUp = () => (
     <ModalStyle>
       <Popup trigger={<button className="contact-button">CONTACTO</button>} modal>
@@ -215,28 +221,27 @@ const Sidebar = () => {
       </Popup>
     </ModalStyle>
   );
-
-    return (
-      <SidebarStyle>
-        <div className='sidebar'>
-            <div className='sidebar-top'>
-                <img src='https://image.flaticon.com/icons/svg/876/876019.svg' alt='vinyet escribano'/>
-                <p id='sidebar-text'>Desarrolladora web front-end con conocimientos de SEO, diseño y marketing</p>
-                <div className='sidebar-top-link'>
-                <li><a href='https://www.linkedin.com/in/vinyetescribano/'><img src='https://image.flaticon.com/icons/svg/1946/1946531.svg' alt='linkedin'></img></a></li>        
-                <li><a href='https://github.com/Vinyet'><img src='https://image.flaticon.com/icons/svg/25/25657.svg' alt='github'></img></a></li>        
-                </div>
-            </div>
-            <div className='sidebar-navigation'>
-                <Link to="/">Inicio</Link>
-                <Link to="/sobre-mi">Sobre mí</Link>
-                <Link to="/porfolio">Porfolio</Link>
-                <Link to="/cv">Currículum</Link>
-            </div>
-            {contactPopUp()}
-        </div>
-      </SidebarStyle>
-    )
+  return (
+    <SidebarStyle>
+      <div className='sidebar'>
+          <div className='sidebar-top'>
+              <img src='https://image.flaticon.com/icons/svg/876/876019.svg' alt='code icon'/>
+              <p id='sidebar-text'>Desarrolladora web front-end con conocimientos de SEO, diseño y marketing</p>
+          </div>
+          <div className='sidebar-navigation'>
+              <Link to="/">Inicio</Link>
+              <Link to="/sobre-mi">Sobre mí</Link>
+              <Link to="/porfolio">Porfolio</Link>
+              <Link to="/cv">Currículum</Link>
+          </div>
+          {contactPopUp()}
+          <div className='sidebar-top-link'>
+              <li><a href='https://www.linkedin.com/in/vinyetescribano/' target="_blank" rel="noopener noreferrer"><img src='https://image.flaticon.com/icons/svg/1946/1946531.svg' alt='linkedin'></img></a></li>        
+              <li><a href='https://github.com/Vinyet' target="_blank" rel="noopener noreferrer"><img src='https://image.flaticon.com/icons/svg/25/25657.svg' alt='github'></img></a></li>        
+          </div>
+      </div>
+    </SidebarStyle>
+  )
 }
 
 export default Sidebar;

@@ -5,6 +5,7 @@ import { accentColor } from '../variables';
 
 const HeaderStyle = styled.div`
     margin-left: 500px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: space-between;
     max-width: 90em;
@@ -13,7 +14,7 @@ const HeaderStyle = styled.div`
         h2 {
             letter-spacing: 3px;
             font-size: 3rem;
-            font-weight: 400;
+            font-weight: 200;
             margin-bottom: 0px;
         }
         h4 {
@@ -24,24 +25,13 @@ const HeaderStyle = styled.div`
         }
         p {
             margin-top: 40px;
-            line-height: 30px;
+            font-size: 200;
+            line-height: 20px;
             letter-spacing: 1px;
             span { font-weight: 800; }
         }
     }
-    .photo {
-        width: 200px;
-        img {
-            margin-top: 100px;
-            max-width: 100%;
-            max-height: 100%;
-            height: auto;
-            filter: saturate(150%);
-        }
-    }
-
 `;
-
 
 const Header = () => {
     return (
@@ -49,10 +39,7 @@ const Header = () => {
             <div className="description">
                 <h2>Vinyet Escribano</h2>
                 <h4>FRONT-END DEVELOPER</h4>
-                <p>· Desarrolladora web <span>front-end</span> junior<br/> · Especializada en <span>marketing</span>, <span>UI</span>, <span>UX</span> y <span>accesibilidad web</span><br/>· Sueño con un <span>Internet descentralizado &#10084;</span></p>
-            </div>
-            <div className="photo">
-                <img src='' alt='vinyet escribano'></img>
+                <p>· Desarrolladora web <span>front-end</span><br/> · Especializada en <span>marketing</span>, <span>UI</span>, <span>UX</span> y <span>accesibilidad web</span><br/>· Sueño con un <span>Internet descentralizado &#10084;</span></p>
             </div>
         </HeaderStyle>
     )
