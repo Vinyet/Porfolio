@@ -1,7 +1,20 @@
-## Porfolio
+# Porfolio 
 
-Este es mi porfolio personal como desarrolladora web. 
+![porfolio-preview](public/porfolio-preview.png)
+## Technologies
 
-El porfolio está hecho con React.js y Firebase.
+* React.js
+* Firebase
 
-En "constante" actualización.
+**Libraries**:
+
+* Styled Components
+* React Spring
+* React Popup
+
+### Next
+
+* Toggle language (ES/EN)
+* Email configuration for modal
+* Add image to header
+* Make about-me animation suck less
