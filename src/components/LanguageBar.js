@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 
@@ -19,10 +19,19 @@ const LanguageBarStyle = styled.div`
 `;
 
 const LanguageBar = () => {
+    const [ language, setLanguage ] = useState();
+
+    const handleSelectLanguage = e => {
+        setLanguage(e.target.value);
+    }
+
     return (
-        <LanguageBarStyle>
-            <p><a href="/">ES</a> / <a href="/">EN</a></p>
-        </LanguageBarStyle>
+        <LanguageBarStyle>  
+        <select value={language} onChange={handleSelectLanguage}>
+            <option value='es'>ES</option>
+            <option value='en'>EN</option>
+        </select>
+        </LanguageBarStyle>  
     )
 }
 
