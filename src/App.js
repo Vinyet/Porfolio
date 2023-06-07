@@ -11,12 +11,11 @@ import Footer from './components/Footer';
 import Porfolio from './components/Porfolio';
 import SobreMi from './components/SobreMi';
 import Curriculum from './components/Curriculum';
-import LanguageBar from './components/LanguageBar';
 import NotFound from './components/NotFound';
-import './index.scss';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from './global';
 import { lightTheme, darkTheme } from './theme';
+import ToggleStyles from './styles/ToggleStyles';
 
 
 function App() {  
@@ -36,9 +35,12 @@ function App() {
         <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
             <>
             <GlobalStyles />
-            <LanguageBar/>
-            <button className="toggle-btn" onClick={toggleTheme}><img src="https://image.flaticon.com/icons/svg/107/107753.svg" alt='toggle button'></img></button>
             <Header/>
+            <ToggleStyles>
+              <div className="check-box">
+                <input onClick={toggleTheme} type="checkbox" />
+              </div>
+            </ToggleStyles>
             <Sidebar/>
               <Switch>
                 <Route exact path="/" component={Main}/>
@@ -57,3 +59,7 @@ function App() {
 
 export default App;
 
+
+/*
+<button className="toggle-btn" onClick={toggleTheme}><img src="" alt='toggle button'></img></button>
+*/

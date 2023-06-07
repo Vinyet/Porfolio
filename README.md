@@ -14,7 +14,5 @@
 
 ### Next
 
-* Toggle language (ES/EN)
+* Finish toggle light/dark mode
 * Email configuration for modal
-* Add image to header
-* Make about-me animation suck less

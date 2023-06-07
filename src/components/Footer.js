@@ -1,18 +1,14 @@
-import styled from 'styled-components';
+import React from 'react';
+import FooterStyles from '../styles/FooterStyles';
 
 
-const Footer = styled.div`
-    background-color: #000;
-    padding: 10px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
-    text-align: right;
-    font-size: 14px;
-    padding-right: 20px;
-    letter-spacing: 1px;
-`;
+const Footer = () => {
+    return (
+        <FooterStyles>
+            <p>&copy; Vinyet Escribano 2023</p>
+        </FooterStyles>
+    )
+}
 
 export default Footer;
 

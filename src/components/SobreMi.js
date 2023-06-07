@@ -1,65 +1,7 @@
 import React, { useState } from 'react';
 import {useTrail, useSpring, animated} from 'react-spring';
-import styled from 'styled-components';
-import { accentColor } from '../variables';
+import SobreMiStyles from '../styles/SobreMiStyles';
 
-
-const SobreMiStyles = styled.div`
-    margin-left: 500px;
-    margin-bottom: 150px;
-    max-width: 90em;
-    h3 {
-        background-color: ${accentColor};
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-    }
-    .about-me-text {
-        padding: 20px;
-        margin-top: 50px;
-        margin-bottom: 100px;
-        border-top: 1px solid lightgray;
-        font-size: 1.1em;
-        line-height: 28px;
-    }
-    .split-container {
-        display: flex;
-        width: 90em;
-        height: 320px;
-        .traits-animation {
-            .traits {
-                cursor: pointer;
-                padding: 5px 20px;
-                width: 200px;
-                &:hover {
-                    letter-spacing: 2px;
-                    transition-duration: 0.7s;
-                }
-            }
-        }
-        .trait-explanation {
-            min-width: 1210px;
-            .trait-display {
-                display: flex;
-                height: 100%;
-                max-height: 100%;
-                p {
-                    flex: 1;
-                    font-size: 18px;
-                    line-height: 25px;
-                }
-                img {
-                    flex: 1;
-                    max-width: 450px;
-                    height: auto;
-                    display: block;
-                    margin: auto;
-                    filter: grayscale(90%);
-                }
-            }
-        }
-    }
-`;
 
 const traits = ['FORTALEZAS', 'DEBILIDADES', 'ME INTERESA', 'NO ME INTERESA'];
 const config = { mass: 10, tension: 2000, friction: 250 }
@@ -82,29 +24,36 @@ const SobreMi = () => {
     })
 
     const handleTrait = (e) => {
-        // optimize + case
-        if (e.currentTarget.textContent === traits[0]) {
+        switch (e.currentTarget.textContent) {
+          case traits[0]:
             setFortalezas(true);
             setDebilidades(false);
             setIntereses(false);
             setNoInteresa(false);
-        } else if (e.currentTarget.textContent === traits[1]) {
+            break;
+          case traits[1]:
             setDebilidades(true);
             setFortalezas(false);
             setIntereses(false);
             setNoInteresa(false);
-        } else if (e.currentTarget.textContent === traits[2]) {
+            break;
+          case traits[2]:
             setIntereses(true);
             setFortalezas(false);
             setDebilidades(false);
             setNoInteresa(false);
-        } else if (e.currentTarget.textContent === traits[3]) {
+            break;
+          case traits[3]:
             setNoInteresa(true);
             setFortalezas(false);
             setDebilidades(false);
             setIntereses(false);
+            break;
+          default:
+            break;
         }
-    }
+      }
+      
 
     return (
         <SobreMiStyles>
@@ -133,11 +82,11 @@ const SobreMi = () => {
                             <img src='debilidades.svg' alt='debilidades-icon'/>
                         </animated.div> : null}
                         {(intereses) ? <animated.div class='trait-display' style={props}>
-                            <p>El blockchain, las finanzas descentralizadas, el dilema que plantea la inteligencia artificial, la filosofía y la astronomía.</p>
+                            <p>El blockchain, el dilema que plantea la inteligencia artificial, la filosofía y la astronomía.</p>
                             <img src='intereses.svg' alt='intereses-icon'/>
                         </animated.div> : null}
                         {(noInteresa) ? <animated.div class='trait-display' style={props}>
-                            <p>Los móviles (en serio, 👎). Tampoco me gusta cuando la burocracia y los protocolos se imponen a la lógica y a lo que dicta el sentido común en un momento determinado.</p>
+                            <p>Los móviles, la burocracia, y cuando la forma se antepone al contenido.</p>
                             <img src='nointeresa.svg' alt='nointeresa-icon'/>
                         </animated.div> : null}
                     </div> 
@@ -147,6 +96,16 @@ const SobreMi = () => {
                     <p>Me gradué en <strong>Periodismo</strong> en el año 2015 con el objetivo de dedicarme a la <strong>divulgación científica</strong>, pues siempre me ha apasionado la ciencia y la tecnología, y creo en el poder de la palabra para aportar mi granito de arena el mundo.
                     La vida me llevó a complimentar mis habilidades comunicativas con estudios en <strong>publicidad</strong>, <strong>marketing</strong>, <strong>fotografía</strong> y <strong>comunicación audiovisual</strong>. Hará cosa de tres años añadí la <strong>programación web</strong> a mi colección.</p>
                     <p>Actualmente me dedico a buscarme la vida fusionando todos estos conocimientos, y a seguir formándome.</p>
+                </div>
+                <div className="personality-type">
+                    <h4>Tipo de Personalidad</h4>
+                    <p>Mi tipo de personalidad es <strong><a href="https://www.16personalities.com/es/personalidad-intj">INTJ</a></strong>.</p>
+                    <ul className="anlist">
+                        <li><strong>Introverted.</strong> Gano mi energía estando en mi propio mundo, pasando tiempo a solas en mi cabeza. Prefiero pensar primero en mis ideas, y sólo luego compartirlas.</li>
+                        <li><strong>INtuitive.</strong> Aprendo viendo la "big picture" y las temáticas. Pienso en cómo la información se conecta a gran escala.</li>
+                        <li><strong>Thinking.</strong> Tomo decisiones basándome en los pros y en los contras. Me fijo en las consequencias lógicas y observo desde un punto de vista objetivo.</li> 
+                        <li><strong>Judging.</strong> Tengo miles de agendas, listas y planificadores. Me gusta la rutina y tener el día estructurado.</li>
+                    </ul>
                 </div>
             </div>
         </SobreMiStyles>

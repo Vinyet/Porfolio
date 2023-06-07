@@ -1,104 +1,36 @@
 import React from 'react';
 import {useSpring, animated} from 'react-spring';
-import styled from 'styled-components';
-import {accentColor} from '../variables';
+import MainStyles from '../styles/MainStyles';
 
-
-const MainStyles = styled.div`
-.main {
-    margin-left: 500px;
-    margin-bottom: 150px;
-    max-width: 90em;
-    h3 {
-        background-color: ${accentColor};
-        color: #fff;
-        font-weight: 600;
-        text-align: center;
-        padding: 20px;
-    }
-    .skills-box {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 50px;
-        .skills-box-row {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 30px;
-            padding: 10px;
-            .skill {
-                display: flex;
-                flex-direction: column;
-                img {
-                    margin: auto;
-                    width: 100px;
-                    height: 100px;
-                }
-                p {
-                    text-align: center;
-                    font-size: 18px;
-                    line-height: 27px;
-                    max-width: 250px;
-                }
-            #firebase img {
-                height: 90px;
-                width: 70px;
-            }
-            #sass img {
-                height: 80px;
-                width: 140px;
-            }
-        }
-    }
-    .learning-box-row {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 30px;
-        img {
-            margin: auto;
-            width: 100px;
-            height: 100px;
-        }
-        #redux img {
-            height: 100px;
-            width: 120px;
-        }
-        #cypress img {
-            height: 50px;
-            width: 140px;
-            margin-top: 25px;
-        }
-    }
-}
-`;
 
 const Main = () => {
     const props = useSpring({opacity: 1, from: {opacity: 0}})
     return (
-            <MainStyles>
+        <MainStyles>
             <animated.div style={props} className='main'>
                 <h3>¿QUÉ PUEDO HACER?</h3>
                 <div className="skills-box">
                     <div className="skills-box-row">
                         <div className="skill" id="html5">
-                            <img src="https://pngimage.net/wp-content/uploads/2018/06/html5-logo-png-6.png" alt="html5"></img>
-                            <p>Maquetar webs utilizando las convenciones de HTML5 teniendo siempre en mente el SEO: keywords, meta tags, etc.</p>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnQpe2IqpHBJp2ZxrvyNo3YiHls8zlzZYz2ahIGrIhYyX1su8k8cKw1lv84Kq5Jq2MlbQ&usqp=CAU" alt="html logo"></img>
+                            <p>Maquetar webs utilizando las convenciones de HTML5 teniendo siempre en mente la optimización SEO.</p>
                         </div>
                         <div className="skill" id="css3">
-                            <img src="https://i.pinimg.com/originals/a3/2f/83/a32f83aa2c675058e4a05a0fd4da05eb.png" alt="css"></img>
+                            <img src="https://juststickers.in/wp-content/uploads/2014/05/CSS3-Mark-Shape-Cut.png" alt="css logo"></img>
                             <p>Maquetar una web responsive con CSS3, utilizando animaciones y transiciones. Utilizo metodología BEM.</p>
                         </div>
                         <div className="skill" id="javascript">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" alt="javascript"></img>
-                            <p>Programar una web o aplicación web utilizando JavaScript ES6. Puedo utilizar jQuery si se requiere.</p>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" alt="javascript logo"></img>
+                            <p>Programar una web o aplicación web utilizando JavaScript ES6. jQuery.</p>
                         </div>
                     </div>
                     <div className="skills-box-row">  
                         <div className="skill" id="sass">
-                            <img src="https://cdn.iconscout.com/icon/free/png-512/sass-226054.png" alt="sass"></img>
+                            <img src="https://cdn.iconscout.com/icon/free/png-512/sass-226054.png" alt="sass logo"></img>
                             <p>Integrar Sass en proyectos web para cohesionar los estilos de una web o aplicación.</p>
                         </div>
                         <div className="skill" id="react">
-                            <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="react"></img>
+                            <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="react logo"></img>
                             <p>Desarrollar aplicaciones web con React.js mediante el uso de hooks e interactuando con APIs.</p>
                         </div>
                         <div className="skill" id="firebase">
@@ -111,18 +43,18 @@ const Main = () => {
                 <div className="skills-box">
                     <div className="learning-box-row">
                         <div className="skill">
-                            <img src="https://cdn.worldvectorlogo.com/logos/typescript.svg" alt="typescript"></img>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" alt="python logo"></img>
                         </div>
-                        <div className="skill" id="redux">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png" alt="redux"></img>
+                        <div className="skill" id="node">
+                            <img style={{ width: '150px' }} src="data:image/png;base64,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" alt="node logo"></img>
                         </div>
-                        <div className="skill" id="cypress">
-                            <img src="https://dka575ofm4ao0.cloudfront.net/pages-transactional_logos/retina/77608/cypress-bw.png" alt="cypress"></img>
+                        <div className="skill" id="express">
+                            <img style={{ width: '120px' }} src="data:image/png;base64,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" alt="express logo"></img>
                         </div>
                     </div>
                 </div>
             </animated.div>
-            </MainStyles>
+        </MainStyles>
     )
 }
 
